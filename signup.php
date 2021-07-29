@@ -70,7 +70,7 @@
         </div>
         
         <div class="col-md-12">
-            <form class="form" method="post">
+            <form class="form" method="POST" action="controller/doRegister.php">
                 <div class="form-group">
                     <label>Username</label>
                     <br>
@@ -80,23 +80,23 @@
                 <div class="form-group">
                     <label>Email</label>
                     <br>
-                    <input type="text" name="email" id="email" class="form"
+                    <input type="email" name="email" id="email" class="form"
                     placeholder="Input Email">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
                     <br>
-                    <input type="text" name="password" id="password" class="form"
+                    <input type="password" name="password" id="password" class="form"
                     placeholder="Input Password">
                 </div>
                 <div class="form-group">
                     <label>Confirm Passwrod</label>
                     <br>
-                    <input type="text" name="ConPassword" id="ConPassword" class="form"
+                    <input type="password" name="ConPassword" id="ConPassword" class="form"
                     placeholder="Confirm Password">
                 </div>
 
-                <button type="submit" name="btnSignUp" class="btn btn-success"><a href="view.php">Sign Up</a></button>
+                <button type="submit" name="btnSignUp" class="btn btn-success">Sign Up</button>
                 <br>
                 <button type="submit" name="btnCancel" class="btn btn-warning"><a href="login.php">Cancel</a></button>
             </form>

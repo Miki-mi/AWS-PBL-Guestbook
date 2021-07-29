@@ -8,12 +8,6 @@
     <title>Guestbook</title>
 </head>
 <body>
-    <?php
-        include_once("./database/db.php");
-        $query = "SELECT * FROM guest";
-        $result = $conn->query($query);
-    ?>
-
     <div class="signoutbutton">
         <input type="button" value="Sign Out" class="btn">
     </div>
@@ -50,18 +44,11 @@
                     <th id="name">Name</th>
                     <th id="message">Message</th>
                 </tr>
-                <!-- <tr>
+                <tr>
                     <td class="td-spacing">8:00PM</td>
                     <td class="td-spacing">Budi</td>
                     <td class="td-spacing">Congratulations!</td>
-                </tr> -->
-                <?php while($row = $result->fetch_assoc()){?>
-                    <tr>
-                        <td class="td-spacing"> <?php echo $row["date"]?> </td>
-                        <td class="td-spacing"> <?php echo $row["name"]?> </td>
-                        <td class="td-spacing"> <?php echo $row["message"]?> </td>
-                    </tr>
-                <?php } ?>
+                </tr>
             </table>
         </div>
     </div>

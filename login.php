@@ -68,7 +68,7 @@
         </div>
         
         <div class="col-md-12">
-            <form class="form" method="post">
+            <form class="form" method="POST" action="controller/doLogin.php">
                 <div class="form-group">
                     <label>Username / Email</label>
                     <br>
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <label>Password</label>
                     <br>
-                    <input type="text" name="password" id="password" class="form"
+                    <input type="password" name="password" id="password" class="form"
                     placeholder="Input Password">
                 </div>
                 <div class="form-group">
@@ -88,7 +88,7 @@
                     placeholder="Input Event ID">
                 </div>
 
-                <button type="submit" name="btnLogin" class="btn btn-success"><a href="view.php">Log In</a></button>
+                <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
                 <br>
                 <a href="signup.php">Sign Up</a>
             </form>
