@@ -58,3 +58,31 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `eventID` varchar(100) NOT NULL,
+  `createdBy` varchar(100) NOT NULL,
+  `CreatedDate` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`eventID`, `createdBy`, `CreatedDate`) VALUES
+('andiswedding', 'andi@gmail.com', '2021-07-29');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`eventID`);
+COMMIT;
