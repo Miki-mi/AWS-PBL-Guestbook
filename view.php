@@ -2,14 +2,14 @@
 session_start();
 include "database/db.php";
 $eventid = $_SESSION['eventid'];
-$userid = $_GET['userid'];
+
 if($eventid == NULL)
 {
-    header("location: ./../login.php");
+    header("location: ./login.php");
 }
 
 else
-{ ?>
+{ $userid = $_GET['userid'];?>
 
 <!DOCTYPE html>
 <html lang="en">

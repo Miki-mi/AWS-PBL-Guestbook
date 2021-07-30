@@ -7,7 +7,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnSignUp']))
     $pass = $_POST['password'];
     $conPass = $_POST['ConPassword'];
 
-    if(strcmp($conPass,$pass)!=0){
+    if($name == NULL || $email == NULL || $pass == NULL || $conPass == NULL){
+        $_SESSION['error'] = 'Every form must be filled';
+        header("Location: ./../signup.php");
+    }
+
+    else if(strcmp($conPass,$pass)!=0){
         
         $_SESSION['ConPassErr'] = 'Password does not match!';
         header("Location: ./../signup.php");
