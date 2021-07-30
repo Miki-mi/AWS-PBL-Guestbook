@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2021 at 04:25 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 30, 2021 at 04:34 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `guestbook`
 --
-
+CREATE DATABASE IF NOT EXISTS guestbook;
 -- --------------------------------------------------------
 
 --
@@ -32,19 +31,6 @@ CREATE TABLE `events` (
   `ID` int(11) NOT NULL,
   `eventID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `guest`
---
-
-CREATE TABLE `guest` (
-  `guestID` int(255) NOT NULL,
-  `date` varchar(255) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `message` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -78,12 +64,6 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `guest`
---
-ALTER TABLE `guest`
-  ADD PRIMARY KEY (`guestID`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -98,12 +78,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `events`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `guest`
---
-ALTER TABLE `guest`
-  MODIFY `guestID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
