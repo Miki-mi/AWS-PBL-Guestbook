@@ -17,70 +17,32 @@ else
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <title>GUESTBOOK</title>
-    <style>
-        *{
-            margin: 5px;
-            padding: 0;
-        }
-
-        .container{
-            display:flex;
-            justify-content: flex-end;
-            align-items: baseline;
-            width:100%;
-        }
-
-        .btnLogin, .btnSignUp, .btnCancel{
-            padding-left: 12px;
-            padding-right: 12px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .container{
-            display:flex;
-            width: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .heading{
-            width: 100%;
-            text-align: center;
-        }
-
-        input[type=text] {
-            width: 100%;
-            padding: 10px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: 1.5px solid black;
-            border-radius: 15px;
-        }
-
-        .form-text{
-            width: 400px;
-            border-radius: 7px;
-            padding: 5px; 
-            font-size: 18px;
-            width: 100%;
-        }
-
-    </style>
+   
 </head>
 <body>
-    <div class="container">
-        <div class="heading">
-            <b>GUESTBOOK</b>
+    <!-- navbar -->
+    <div class="navbar1">
+        <div class="menu">
+            <a href="signup.php" class="list">Sign Up</a>
+            <a href="login.php" class="list">Login </a>
+            <a href="#" class="list">About Us</a>
         </div>
-        
-        <div class="col-md-12">
+        <a href="signup.php"><img src="./images/logo.png" alt="Logo" class="logo"></a>
+    </div>
+
+<!-- login Form -->
+<div class="bg-register">
+    <div class="container">
+        <div class="box-register">
+            <div class="box">
+        <div class="heading">
+            <b>LOGIN</b>
+        </div>
             <form class="form" method="POST" action="controller/doLogin.php">
                 <div class="form-group">
                     <label>Username</label>
@@ -103,7 +65,7 @@ else
 
                 <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
                 <br>
-                <a href="signup.php">Sign Up</a>
+                <a href="signup.php">Don't have an account? Sign Up here!</a>
             </form>
         </div>
     </div>

@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding-top: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.signoutbutton{
+    display:flex;
+    justify-content: flex-end;
+	align-items: baseline;
+    width:100%;
+}
+
+
+.body{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    width: 100%;
+    text-align: center;
+}
+
+.form{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.form-text{
+    width: 400px;
+    border-radius: 7px;
+    padding: 5px; 
+    font-size: 18px;
+}
+
+table, th, td{
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#time{
+    padding: 10px 50px;
+}
+#name{
+    padding: 10px 70px;
+}
+#message{
+    padding: 10px 400px;
+}
+
+.td-spacing{
+    padding: 10px;
+}

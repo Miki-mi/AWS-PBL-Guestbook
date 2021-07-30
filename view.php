@@ -17,74 +17,81 @@ else
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/view.css">
     <title>Guestbook</title>
 </head>
 <body>
+    <!-- navbar -->
+    <div class="navbar1">
+        <div class="menu">
+            <a href="controller/doLogout.php" class="list">Sign Out</a>
+            <a href="#" class="list">About Us</a>
+        </div>
+        <a href="signup.php"><img src="./images/logo.png" alt="Logo" class="logo"></a>
+    </div>
 
-    <form action="controller/doLogout.php" method="POST">
-        <div class="signoutbutton">
-            <input type="submit" value="Sign Out" class="btn">
-        </div>
-    </form>
+    <div class="container">
+        
 
-    <div class="body">
-        <div class="heading">
-            <h2>GUESTBOOK</h2>
-            <h4>Event ID: <?=$eventid?></h4>
-        </div>
-        <br>
-        <div class="form">
-            <form action="controller/addGuest.php?userid=<?=$userid?>"  method="POST">
-                <div class="form-content">
-                    <label for="name" class="label-heading">Name</label>
-                    <br>
-                    <input type="text" name="name" class="form-text">
-                </div>
-                <br>
-                <div class="form-content">
-                    <label for="Message" class="label-heading">Message</label>
-                    <br>
-                    <input type="text" name="message" class="form-text">
-                </div>
-                <br>
-                <input type="submit" value="Submit" class="btn" id="submitbtn">
-            </form>
-        </div>
-        <br>
-        <div class="results">
-            <h3>Messages</h3>
+        <div class="body">
+            <div class="heading">
+                <h2>GUESTBOOK</h2>
+                <h4>Event ID: <?=$eventid?></h4>
+            </div>
             <br>
-            <table>
-            
-                <tr>
-                    <th id="time">Time</th>
-                    <th id="name">Name</th>
-                    <th id="message">Message</th>
-                </tr>
+            <div class="form">
+                <form action="controller/addGuest.php?userid=<?=$userid?>"  method="POST">
+                    <div class="form-content">
+                        <label for="name" class="label-heading">Name</label>
+                        <br>
+                        <input type="text" name="name" class="form-text">
+                    </div>
+                    <br>
+                    <div class="form-content">
+                        <label for="Message" class="label-heading">Message</label>
+                        <br>
+                        <input type="text" name="message" class="form-text">
+                    </div>
+                    <br>
+                    <input type="submit" value="Submit" class="btn" id="submitbtn">
+                </form>
+            </div>
+            <br>
+            <div class="results">
+                <h3>Messages</h3>
+                <br>
+                <table>
+                
+                    <tr>
+                        <th id="time">Time</th>
+                        <th id="name">Name</th>
+                        <th id="message">Message</th>
+                    </tr>
 
-                <?php
-                $guestID = 0;
-                while(true){
-                    $guestID += 1;
-                    $sql = "SELECT * FROM $eventid where guestID=?";
-                    $select = $conn->prepare($sql);
-                    $select->bind_param('i', $guestID);
-                    $select->execute();
-                    $guest = $select->get_result();
-                ?>      
-                <?php foreach($guest as $g){
+                    <?php
+                    $guestID = 0;
+                    while(true){
+                        $guestID += 1;
+                        $sql = "SELECT * FROM $eventid where guestID=?";
+                        $select = $conn->prepare($sql);
+                        $select->bind_param('i', $guestID);
+                        $select->execute();
+                        $guest = $select->get_result();
+                    ?>      
+                    <?php foreach($guest as $g){
 
-                    ?>
-                <tr>
-                    <td class="td-spacing"><?=$g['date']?></td>
-                    <td class="td-spacing"><?=$g['name']?></td>
-                    <td class="td-spacing"><?=$g['message']?></td>
-                </tr>
+                        ?>
+                    <tr>
+                        <td class="td-spacing"><?=$g['date']?></td>
+                        <td class="td-spacing"><?=$g['name']?></td>
+                        <td class="td-spacing"><?=$g['message']?></td>
+                    </tr>
 
-                <?php } ?> 
-            <?php } ?>
-            </table>
+                    <?php } ?> 
+                <?php } ?>
+                </table>
+            </div>
         </div>
     </div>
 </body>
