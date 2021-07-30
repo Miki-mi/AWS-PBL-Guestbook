@@ -41,7 +41,7 @@
             <br>
             <p>Do you want to create an event?</p>
             <br>
-            <button class="btn btn-outline-info"><a href="createevent.php">Yes</a></button>
+            <button class="btn btn-outline-info"><a href="controller/createEvent.php">Yes</a></button>
             <br>
             <button class="btn btn-outline-info"><a href="login.php">No</a></button>
         </div>

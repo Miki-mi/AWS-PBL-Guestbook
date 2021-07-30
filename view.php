@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if($_SESSION['eventid'] == NULL)
+{
+    header("location: ./../signup.php");
+}
+
+else
+{ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +28,7 @@
     <div class="body">
         <div class="heading">
             <h2>GUESTBOOK</h2>
-            <h4>Event ID: andiswedding</h4>
+            <h4>Event ID: <?=$_SESSION['eventid']?></h4>
         </div>
         <br>
         <div class="form">
@@ -58,3 +68,7 @@
     </div>
 </body>
 </html>
+
+<?php 
+}
+?>
