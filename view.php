@@ -1,6 +1,9 @@
 <?php 
 session_start();
-if($_SESSION['eventid'] == NULL)
+include "database/db.php";
+$eventid = $_SESSION['eventid'];
+$userid = $_GET['userid'];
+if($eventid == NULL)
 {
     header("location: ./../login.php");
 }
@@ -28,11 +31,11 @@ else
     <div class="body">
         <div class="heading">
             <h2>GUESTBOOK</h2>
-            <h4>Event ID: <?=$_SESSION['eventid']?></h4>
+            <h4>Event ID: <?=$eventid?></h4>
         </div>
         <br>
         <div class="form">
-            <form action="controller/addGuest.php"  method="POST">
+            <form action="controller/addGuest.php?userid=<?=$userid?>"  method="POST">
                 <div class="form-content">
                     <label for="name" class="label-heading">Name</label>
                     <br>
@@ -53,16 +56,34 @@ else
             <h3>Messages</h3>
             <br>
             <table>
+            
                 <tr>
                     <th id="time">Time</th>
                     <th id="name">Name</th>
                     <th id="message">Message</th>
                 </tr>
+
+                <?php
+                $guestID = 0;
+                while(true){
+                    $guestID += 1;
+                    $sql = "SELECT * FROM $eventid where guestID=?";
+                    $select = $conn->prepare($sql);
+                    $select->bind_param('i', $guestID);
+                    $select->execute();
+                    $guest = $select->get_result();
+                ?>      
+                <?php foreach($guest as $g){
+
+                    ?>
                 <tr>
-                    <td class="td-spacing">8:00PM</td>
-                    <td class="td-spacing">Budi</td>
-                    <td class="td-spacing">Congratulations!</td>
+                    <td class="td-spacing"><?=$g['date']?></td>
+                    <td class="td-spacing"><?=$g['name']?></td>
+                    <td class="td-spacing"><?=$g['message']?></td>
                 </tr>
+
+                <?php } ?> 
+            <?php } ?>
             </table>
         </div>
     </div>
