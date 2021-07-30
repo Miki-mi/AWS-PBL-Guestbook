@@ -8,9 +8,13 @@
     <title>Guestbook</title>
 </head>
 <body>
-    <div class="signoutbutton">
-        <input type="button" value="Sign Out" class="btn">
-    </div>
+
+    <form action="controller/doLogout.php" method="POST">
+        <div class="signoutbutton">
+            <input type="submit" value="Sign Out" class="btn">
+        </div>
+    </form>
+
     <div class="body">
         <div class="heading">
             <h2>GUESTBOOK</h2>
