@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['eventid'] == NULL)
 {
-    header("location: ./../signup.php");
+    header("location: ./../login.php");
 }
 
 else

@@ -41,7 +41,8 @@
             <br>
             <p>Do you want to create an event?</p>
             <br>
-            <button class="btn btn-outline-info"><a href="controller/createEvent.php">Yes</a></button>
+            <?php $userid = $_GET['userid']; ?>
+            <button class="btn btn-outline-info"><a href="controller/createEvent.php?userid=<?=$userid?> ">Yes</a></button>
             <br>
             <button class="btn btn-outline-info"><a href="login.php">No</a></button>
         </div>

@@ -6,9 +6,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnSignUp']))
     $email = $_POST['email'];
     $pass = $_POST['password'];
     $conPass = $_POST['ConPassword'];
-   //die("1");
+
     if(strcmp($conPass,$pass)!=0){
-        die("2");
+        
         $_SESSION['ConPassErr'] = 'Password does not match!';
         header("Location: ./../signup.php");
     }

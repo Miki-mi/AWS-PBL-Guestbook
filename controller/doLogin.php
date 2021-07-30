@@ -2,7 +2,7 @@
 include "./../database/db.php";
 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnLogin'])) 
+if($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -20,7 +20,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnLogin']))
 
     session_start();
 
-    if($result->num_rows > 0) {
+    if($result->num_rows > 0) 
+    {
         // login successful
 
         $row=$result->fetch_assoc();
@@ -30,24 +31,34 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnLogin']))
         {
             session_regenerate_id();
             $_SESSION['username'] = $username;
-
+            $_SESSION['userid'] = $userid;
+            
             if($result2->num_rows > 0)
             {
                 $row2=$result2->fetch_assoc();
                 
                 if($eventID==$row2['eventID'])
                 {
-                    $_SESSION['userid'] = $userid;
+                    $_SESSION['eventid'] = $eventID;
                     header("location: ./../view.php?userid=$userid");
                 }
+                else
+                {
+                //prompt membuat event baru
+                    $_SESSION['eventid'] = $eventID;
+                    header("location: ./../eventnotexist.php?userid=$userid");
+                    // die ("event tidak ditemukan");
+                }
             }
+
             else
             {
                 //prompt membuat event baru
                 $_SESSION['eventid'] = $eventID;
-                header("location: ./../eventnotexist.php");
+                header("location: ./../eventnotexist.php?userid=$userid");
                 // die ("event tidak ditemukan");
             }
+            
         }
         else
         {

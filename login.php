@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+$_SESSION['userid'] = NULL;
+$userid = $_SESSION['userid'];
+if($userid != NULL)
+{
+    header("location: ./view.php?userid=$userid");
+}
+
+else
+{ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +83,7 @@
         <div class="col-md-12">
             <form class="form" method="POST" action="controller/doLogin.php">
                 <div class="form-group">
-                    <label>Username / Email</label>
+                    <label>Username</label>
                     <br>
                     <input type="text" name="username" id="username" class="form"
                     placeholder="Input Username / Email">
@@ -96,3 +109,5 @@
     </div>
 </body>
 </html>
+
+<?php } ?>

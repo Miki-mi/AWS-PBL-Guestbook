@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $min = $info['minutes'];
     $sec = $info['seconds'];
 
-    $current_date = date("F j, Y, g:i a");
+    $current_date = date("F j Y g:i a");
     $name = $_POST['name'];
     $message = $_POST['message'];
 
@@ -24,10 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
-        $sql = "INSERT INTO guest VALUES(null,? , ? , ?)";    
-	    $addGuest = $conn->prepare($sql);
-        $addGuest->bind_param('sss',$current_date, $name, $message);
-        $addGuest->execute();
+        $eventid = $_SESSION['eventid'];
+        $sql = "INSERT INTO $eventid VALUES (null, '$current_date', '$name', '$message')";
+	    $addGuest = $conn->query($sql);
         $_SESSION['msg'] = 'add guest Success!';
 	    header("location: ./../view.php");
     }
