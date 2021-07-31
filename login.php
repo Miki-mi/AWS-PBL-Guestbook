@@ -57,10 +57,10 @@ else
                     placeholder="Input Password">
                 </div>
                 <div class="form-group">
-                    <label>Event ID</label>
+                    <label>Event Name</label>
                     <br>
                     <input type="text" name="eventid" id="eventid" class="form"
-                    placeholder="Input Event ID">
+                    placeholder="Input Event Name">
                 </div>
 
                 <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
