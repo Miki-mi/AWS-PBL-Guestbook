@@ -70,26 +70,37 @@ else
                     </tr>
 
                     <?php
-                    $guestID = 0;
-                    while(true){
-                        $guestID += 1;
-                        $sql = "SELECT * FROM $eventid where guestID=?";
-                        $select = $conn->prepare($sql);
-                        $select->bind_param('i', $guestID);
-                        $select->execute();
-                        $guest = $select->get_result();
-                    ?>      
-                    <?php foreach($guest as $g){
+                    $query = "SELECT * FROM $eventid";
+                    $dbresult = $conn->query($query);
+                    $rowcount = $dbresult->num_rows;
+                    if($rowcount < 0){
+                        // die("No data");
+                    }
+                    else{
+                    //    printf("Total results: %d", $rowcount);
+                    //    die();
+                        $guestID = 0;
+                        while($guestID < $rowcount){
+                            $guestID += 1;
+                            $sql = "SELECT * FROM $eventid where guestID=?";
+                            $select = $conn->prepare($sql);
+                            $select->bind_param('i', $guestID);
+                            $select->execute();
+                            $guest = $select->get_result();
+                        ?>      
+                        <?php foreach($guest as $g){
 
-                        ?>
-                    <tr>
-                        <td class="td-spacing"><?=$g['date']?></td>
-                        <td class="td-spacing"><?=$g['name']?></td>
-                        <td class="td-spacing"><?=$g['message']?></td>
-                    </tr>
+                            ?>
+                        <tr>
+                            <td class="td-spacing"><?=$g['date']?></td>
+                            <td class="td-spacing"><?=$g['name']?></td>
+                            <td class="td-spacing"><?=$g['message']?></td>
+                        </tr>
 
-                    <?php } ?> 
-                <?php } ?>
+                        <?php } 
+                        } 
+                    }?>
+                
                 </table>
             </div>
         </div>
