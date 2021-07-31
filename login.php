@@ -45,7 +45,7 @@ else
         </div>
             <form class="form" method="POST" action="controller/doLogin.php">
                 <div class="form-group">
-                    <label>Username</label>
+                    <label>Username / Email</label>
                     <br>
                     <input type="text" name="username" id="username" class="form"
                     placeholder="Input Username">
@@ -60,7 +60,7 @@ else
                     <label>Event ID</label>
                     <br>
                     <input type="text" name="eventid" id="eventid" class="form"
-                    placeholder="Input Event Name">
+                    placeholder="Input Event Name (Must Contain Alphabets)">
                 </div>
 
                 <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
