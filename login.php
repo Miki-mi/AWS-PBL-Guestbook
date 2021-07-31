@@ -22,7 +22,12 @@ else
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <title>GUESTBOOK</title>
-   
+    <style>
+       p{
+        color: red;
+        font-size: 12px;
+       }
+    </style>
 </head>
 <body>
     <!-- navbar -->
@@ -60,7 +65,8 @@ else
                     <label>Event ID</label>
                     <br>
                     <input type="text" name="eventid" id="eventid" class="form"
-                    placeholder="Input Event Name (Must Contain Alphabets)">
+                    placeholder="Input Event Name">
+                    <p>(EventID Must Contain Alphabets)</p>
                 </div>
 
                 <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
