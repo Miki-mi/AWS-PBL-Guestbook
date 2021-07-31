@@ -34,7 +34,7 @@
                         <label>Username</label>
                         <br>
                         <input type="text" name="username" id="username" class="form"
-                        placeholder="Input Username / Email">
+                        placeholder="Input Username">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
