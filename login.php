@@ -57,7 +57,7 @@ else
                     placeholder="Input Password">
                 </div>
                 <div class="form-group">
-                    <label>Event Name</label>
+                    <label>Event ID</label>
                     <br>
                     <input type="text" name="eventid" id="eventid" class="form"
                     placeholder="Input Event Name">
