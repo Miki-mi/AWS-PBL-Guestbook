@@ -1,20 +1,18 @@
 <?php
 
-// $dbhost = $_SERVER['RDS_HOSTNAME'];
-// $dbport = $_SERVER['RDS_PORT'];
-// $dbname = $_SERVER['RDS_DB_NAME'];
-// $charset = 'utf8' ;
+require __DIR__ . '/vendor/autoload.php';
 
-// $dsn = "mysql:host={$dbhost};port={$dbport};dbname={$dbname};charset={$charset}";
-// $username = $_SERVER['RDS_USERNAME'];
-// $password = $_SERVER['RDS_PASSWORD'];
+$dotenv = new Dotenv\Dotenv(__DIR__, './../../../inc/dbinfo.env');
+$dotenv->load();
 
-// $pdo = new PDO($dsn, $username, $password);
+$DB_SERVER = env(DB_SERVER);
+$DB_USERNAME = env(DB_USERNAME);
+$DB_PASSWORD = env(DB_PASSWORD);
+$DB_DATABASE = env(DB_DATABASE);
 
 try {
-	// $link = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
-
-    $conn = new mysqli('localhost', 'root', '', 'guestbook');
+    //$conn = new mysqli('localhost', 'root', '', 'guestbook');
+	$conn = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
 } catch (Exception $e) {
 	echo 'Connection failed';
 }
