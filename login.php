@@ -65,7 +65,7 @@ else
 
                 <button type="submit" name="btnLogin" class="btn btn-success"> Log In </button>
                 <br><br>
-                <a href="https://alpacaguestbook.auth.us-east-1.amazoncognito.com/login?client_id=1qfajb1pike0of9nj625bk6ubi&response_type=token&scope=email+openid+profile&redirect_uri=https://alpacagb.site/home.php">Login with Amazon Cognito</a>
+                <a href="https://alpacaguestbook.auth.us-east-1.amazoncognito.com/login?client_id=1qfajb1pike0of9nj625bk6ubi&response_type=token&scope=email+openid+profile&redirect_uri=https://web.alpacagb.site/home.php">Login with Amazon Cognito</a>
                 <br><br>
                 <a href="signup.php">Don't have an account? Sign Up here!</a>
             </form>
