@@ -19,8 +19,8 @@
 
     $addTable = $conn->query($createTable);
 
-    $userid = $_GET['userid'];
-    header("location: ./../view.php?userid=$userid");
+    $eventid = $_GET['eventid'];
+    header("location: ./../view.php?eventid=$eventid");
 
         
 ?>

@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $min = $info['minutes'];
     $sec = $info['seconds'];
 
-    $userid = $_GET['userid'];
+    $eventid = $_GET['eventid'];
 
     $current_date = date("F j Y g:i a");
     $name = $_POST['name'];
@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     if($name == NULL || $message == NULL)
     {
     	$_SESSION['failAddGuest'] = 'Every form must be filled!';
-        header("Location: ./../view.php?userid=$userid");
+        header("Location: ./../view.php?eventid=$eventid");
     }
     else
     {
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $sql = "INSERT INTO $eventid VALUES (null, '$current_date', '$name', '$message')";
 	    $addGuest = $conn->query($sql);
         $_SESSION['msg'] = 'add guest Success!';
-	    header("location: ./../view.php?userid=$userid");
+	    header("location: ./../view.php?eventid=$eventid");
     }
 }
 
