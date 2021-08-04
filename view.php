@@ -9,7 +9,7 @@ if($eventid == NULL)
 }
 
 else
-{ $userid = $_GET['userid'];?>
+{ $eventid = $_GET['eventid'];?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ else
             </div>
             <br>
             <div class="form">
-                <form action="controller/addGuest.php?userid=<?=$userid?>"  method="POST">
+                <form action="controller/addGuest.php?eventid=<?=$eventid?>"  method="POST">
                     <div class="form-content">
                         <label for="name" class="label-heading">Name</label>
                         <br>

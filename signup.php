@@ -34,7 +34,7 @@
                         <label>Username</label>
                         <br>
                         <input type="text" name="username" id="username" class="form"
-                        placeholder="Input Username">
+                        placeholder="Input Username / Email">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
@@ -56,8 +56,10 @@
                     </div>
 
                     <button type="submit" name="btnSignUp" class="btn btn-success">Sign Up</button>
-                    <br>
+                    <br><br>
                     <!-- login -->
+                    <a href="https://alpacaguestbook.auth.us-east-1.amazoncognito.com/signup?client_id=1qfajb1pike0of9nj625bk6ubi&response_type=token&scope=email+openid+profile&redirect_uri=https://alpacagb.site/" class="login">Sign up with Amazon Cognito</a>
+                    <br><br>
                     <a href="login.php" class="login">Already have an account? Login here</a>
                 </form>
             </div>

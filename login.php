@@ -22,12 +22,7 @@ else
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <title>GUESTBOOK</title>
-    <style>
-       p{
-        color: red;
-        font-size: 12px;
-       }
-    </style>
+   
 </head>
 <body>
     <!-- navbar -->
@@ -50,10 +45,10 @@ else
         </div>
             <form class="form" method="POST" action="controller/doLogin.php">
                 <div class="form-group">
-                    <label>Username / Email</label>
+                    <label>Username</label>
                     <br>
                     <input type="text" name="username" id="username" class="form"
-                    placeholder="Input Username">
+                    placeholder="Input Username / Email">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
@@ -61,16 +56,17 @@ else
                     <input type="password" name="password" id="password" class="form"
                     placeholder="Input Password">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Event ID</label>
                     <br>
                     <input type="text" name="eventid" id="eventid" class="form"
-                    placeholder="Input Event Name">
-                    <p>(EventID Must Contain Alphabets)</p>
-                </div>
+                    placeholder="Input Event ID">
+                </div> -->
 
-                <button type="submit" name="btnLogin" class="btn btn-success">Log In</button>
-                <br>
+                <button type="submit" name="btnLogin" class="btn btn-success"> Log In </button>
+                <br><br>
+                <a href="https://alpacaguestbook.auth.us-east-1.amazoncognito.com/login?client_id=1qfajb1pike0of9nj625bk6ubi&response_type=token&scope=email+openid+profile&redirect_uri=https://alpacagb.site/">Login with Amazon Cognito</a>
+                <br><br>
                 <a href="signup.php">Don't have an account? Sign Up here!</a>
             </form>
         </div>
