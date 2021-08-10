@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `guestbook`
 --
-CREATE DATABASE IF NOT EXISTS guestbook;
-USE guestbook;
+USE guestbookDB;
 -- --------------------------------------------------------
 
 --
