@@ -18,6 +18,7 @@
 
 <div class="navbar1">
         <div class="menu">
+            <a><?php echo $link['login']; ?> </a>
             <a href="signup.php" class="list">Sign Up</a>
             <a href="login.php" class="list">Login </a>
             <a href="#" class="list">About Us</a>
