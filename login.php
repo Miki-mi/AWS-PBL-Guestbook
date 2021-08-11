@@ -9,7 +9,9 @@ if($userid != NULL)
 }
 
 else
-{ ?>
+{ 
+    $link = parse_ini_file( dirname(__FILE__).'./database/db_params.ini', false );
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +67,7 @@ else
 
                 <button type="submit" name="btnLogin" class="btn btn-success"> Log In </button>
                 <br><br>
-                <a href="https://alpacaguestbook.auth.us-east-1.amazoncognito.com/login?client_id=1qfajb1pike0of9nj625bk6ubi&response_type=token&scope=email+openid+profile&redirect_uri=https://web.alpacagb.site/home.php">Login with Amazon Cognito</a>
+                <a href="<?=$link['login'];?>">Login with Amazon Cognito</a>
                 <br><br>
                 <a href="signup.php">Don't have an account? Sign Up here!</a>
             </form>
