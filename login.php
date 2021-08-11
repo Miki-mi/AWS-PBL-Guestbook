@@ -10,7 +10,7 @@ if($userid != NULL)
 
 else
 { 
-    $link = parse_ini_file( dirname(__FILE__).'./database/db_params.ini', false );
+    $link = parse_ini_file( dirname(__FILE__).'/param.ini', false );
 ?>
 
 <!DOCTYPE html>
