@@ -32,7 +32,6 @@
             <div class="box">
                 <div class="heading">
                     <b>SIGN UP</b>
-                    <a><?php echo $link['login']; ?> </a>
                 </div>
                 <form class="form" method="POST" action="controller/doRegister.php">
                     <div class="form-group">
