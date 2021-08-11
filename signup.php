@@ -18,7 +18,6 @@
 
 <div class="navbar1">
         <div class="menu">
-            <a><?php echo $link['login']; ?> </a>
             <a href="signup.php" class="list">Sign Up</a>
             <a href="login.php" class="list">Login </a>
             <a href="#" class="list">About Us</a>
@@ -33,6 +32,7 @@
             <div class="box">
                 <div class="heading">
                     <b>SIGN UP</b>
+                    <a><?php echo $link['login']; ?> </a>
                 </div>
                 <form class="form" method="POST" action="controller/doRegister.php">
                     <div class="form-group">
