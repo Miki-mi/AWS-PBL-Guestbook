@@ -7,8 +7,8 @@ files:
 permissions:
    - object: /var/www/html/AWS-PBL-Guestbook
      pattern: "**"
-     owner: www-data
-     group: www-data
+     owner: apache
+     group: apache
      mode: 755
      type:
        - file
