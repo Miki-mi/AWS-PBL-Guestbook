@@ -14,4 +14,4 @@ permissions:
        - file
 hooks:
     BeforeInstall:
-        - location: scripts/beforeInstall.bash
+        - location: ~/../var/www/html/scripts/beforeInstall.bash
