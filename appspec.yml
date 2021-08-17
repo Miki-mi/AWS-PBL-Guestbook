@@ -14,4 +14,4 @@ permissions:
        - file
 hooks:
     BeforeInstall:
-        - location: ~/../../../../../../../var/www/html/scripts/beforeInstall.bash
+        - location: ~/../../../../../../../var/www/html/AWS-PBL-Guestbook/scripts/beforeInstall.bash
