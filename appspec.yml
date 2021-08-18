@@ -15,3 +15,5 @@ permissions:
 hooks:
     BeforeInstall:
         - location: scripts/beforeinstall.bash
+    AfterInstall:
+        - location: scripts/afterinstall.bash
